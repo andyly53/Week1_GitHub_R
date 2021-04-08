@@ -30,5 +30,19 @@ ggplot(data = urbanhh_df, mapping = aes(x = urban_type, y = hv009)) +
   geom_boxplot() + 
   labs( x = "Type of Urban", y = "Size of Household" )
 
+#groupby and summarise to find means and median
+
+urbanhh_df %>% 
+  group_by(urban_type) %>% 
+  summarise(
+    mean_run = mean(hv009, na.rm = TRUE)
+   )
+
+urbanhh_df %>% 
+  group_by(urban_type) %>% 
+  summarise(
+    median_run = median(hv009, na.rm = TRUE)
+  )
+
 
 
