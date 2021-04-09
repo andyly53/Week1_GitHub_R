@@ -1,7 +1,8 @@
 library(tidyverse)
 library(haven)
 
-nfhs <- read_dta("IAHR52FL.dta")
+#set path
+nfhs <- read_dta("raw_data/IAHR52FL.dta")
 
 #keep var between hhid and shstuc
 
@@ -46,3 +47,5 @@ urbanhh_df %>%
 
 
 
+data_path <- file.path("IAHR52FL.dta")
+data_path
